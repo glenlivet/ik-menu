@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <link href="reset.min.css" rel="stylesheet">
+    <style>
+        .ik-helper-hidden {
+            display: none;
+        }
+    </style>
+    <style>
+    aside {
+        width:20%;
+    }
+    .ik-menu-wrapper, .ik-menu-ol {
+        font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
+        background: #f9e7e4;
+    }
+    .ik-menu-top-li > a {
+        display: block;
+        color: #443331;
+        border-top: 1px solid #d5ccc8;
+        border-bottom: 1px solid #d5ccc8;
+        padding: 12px 12px 10px 12px;
+        background-color: #f4ece9;
+    }
+
+    .ik-menu-set-ol {
+      margin: 10px 0;
+  }
+
+  li.ik-menu-set-li > a{
+    padding: 6px 12px 6px 12px;
+    display: block;
+    text-transform: none;
+    color: #d84a32;
+}
+
+.ik-menu-top-li.ik-state-active > a {
+    background-color: #f16f58;
+    background-size: 100%;
+    background-image: linear-gradient(-90deg, #f67862, #e7624b);
+    margin-left: -1px;
+    margin-right: -1px;
+    color: white;
+    border-top: 1px solid rgba(255,255,255,0.4);
+}
+
+li.ik-menu-set-li.ik-state-active {
+  background-color: #f2d1cb;
+}
+li.ik-menu-set-li.ik-state-active > a {
+  font-family: 'Maven Pro';
+  font-weight: bolder;
+  color: #282828;
+}
+
+</style>
+</head>
+<body>
+    <aside>
+        <!--
+        <nav class="ik-menu-wrapper">
+            <ol class="ik-menu-ol">
+                <li class="ik-menu-top-li">
+                    <a>Java基础</a>
+                    <ol class="ik-menu-set-ol">
+                        <li class="ik-menu-set-li"><a>Hello World</a></li>
+                        <li class="ik-menu-set-li"><a>Java类</a></li>
+                    </ol> 
+                </li>
+                <li class="ik-menu-top-li ik-state-active">
+                    <a>开发环境</a>
+                    <ol  class="ik-menu-set-ol">
+                        <li class="ik-menu-set-li ik-state-active"><a>Maven</a></li>
+                        <li class="ik-menu-set-li"><a>Nexus</a></li>
+                    </ol> 
+                </li>
+                <li class="ik-menu-top-li">
+                    <a>测试</a>
+                </li>
+            </ol>
+        </nav>
+        -->
+        <nav id="ik-menu">
+        </nav>
+    </aside>
+    <main class="test-main">
+
+    </main>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script>
+    <script type="text/javascript" src="ik-menu.js"></script>
+    <script>
+        var data = [
+        {
+            name: 'Java基础',
+            children: [
+            {
+                name: 'Hello World'
+            },{
+                name: 'Java类'
+            }
+            ]
+        },{
+            name: '开发环境',
+            children: [
+            {
+                name: 'Maven'
+            },{
+                name: 'Nexus'
+            }
+            ]
+        },{
+            name: '测试'
+        }
+        ];
+        var init = function(){
+            $('#ik-menu').menu({
+                data: data
+            });
+        };
+        $(init);
+    </script>
+</body>
+</html>
