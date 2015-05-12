@@ -96,24 +96,31 @@ li.ik-menu-set-li.ik-state-active > a {
     <script>
         var data = [
         {
+            id: 0,
             name: 'Java基础',
             children: [
             {
+                id:1,
                 name: 'Hello World'
             },{
+                id:2,
                 name: 'Java类'
             }
             ]
         },{
+            id:3,
             name: '开发环境',
             children: [
             {
+                id:4,
                 name: 'Maven'
             },{
+                id:5,
                 name: 'Nexus'
             }
             ]
         },{
+            id:6,
             name: '测试'
         }
         ];
@@ -123,6 +130,15 @@ li.ik-menu-set-li.ik-state-active > a {
             });
         };
         $(init);
+        setTimeout(function(){
+            $('#ik-menu').menu('selectItem', 4);
+        }, 3000);
+        setTimeout(function(){
+            $('#ik-menu').menu('selectItem', 1);
+        }, 6000);
+        setTimeout(function(){
+            $('#ik-menu').menu('selectItem', 6);
+        }, 9000);
     </script>
 </body>
 </html>
